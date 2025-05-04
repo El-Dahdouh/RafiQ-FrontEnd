@@ -9,6 +9,7 @@ declare global {
   const App: typeof import('./App.jsx')['default']
   const GlobalMiddleware: typeof import('./middleware/GlobalMiddleware.jsx')['default']
   const Home: typeof import('./components/Home/index.jsx')['default']
+  const LanguageDropdown: typeof import('./components/LanguageDropdown/index.jsx')['default']
   const Link: typeof import('react-router-dom')['Link']
   const NavLink: typeof import('react-router-dom')['NavLink']
   const Navigate: typeof import('react-router-dom')['Navigate']
