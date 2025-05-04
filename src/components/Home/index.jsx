@@ -1,5 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 const Home = () => {
-  return <h1 className="h-screen flex justify-center items-center text-2xl">Hello Home!</h1>;
+  const { t } = useTranslation();
+
+  return (
+    <h1 className="h-screen flex justify-center items-center text-2xl">
+      {t("home")}
+    </h1>
+  );
 };
 
 export default Home;

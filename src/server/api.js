@@ -24,7 +24,7 @@ api.interceptors.request.use(
   (error) => {
     // Handle request errors
     return Promise.reject(error);
-  }
+  },
 );
 
 // Function to handle response errors
@@ -50,7 +50,7 @@ export const setupInterceptors = (navigate) => {
       // You can process the response before returning it
       return response;
     },
-    (error) => handleResponseError(error, navigate)
+    (error) => handleResponseError(error, navigate),
   );
 };
 

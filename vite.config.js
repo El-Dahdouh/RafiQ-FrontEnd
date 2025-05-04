@@ -7,7 +7,7 @@ export default {
     AutoImport({
       imports: [
         "react", // auto-import useState, useEffect, etc.
-        "react-router-dom"
+        "react-router-dom",
       ],
       dirs: ["src/**"],
       dts: "src/auto-imports.d.ts", // generates auto-import typings

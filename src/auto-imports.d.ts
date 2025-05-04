@@ -21,6 +21,7 @@ declare global {
   const encrypt: typeof import('./utils/crypto.js')['encrypt']
   const forwardRef: typeof import('react')['forwardRef']
   const getDecryptedCookie: typeof import('./utils/cookies.js')['getDecryptedCookie']
+  const i18n: typeof import('./i18n.js')['default']
   const lazy: typeof import('react')['lazy']
   const memo: typeof import('react')['memo']
   const removeCookie: typeof import('./utils/cookies.js')['removeCookie']
