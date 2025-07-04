@@ -1,6 +1,6 @@
 import CryptoJS from "crypto-js";
 
-const SECRET_KEY = import.meta.env.VITE_MU_API_URL
+const SECRET_KEY = import.meta.env.VITE_MU_API_URL;
 
 export function encrypt(text) {
   return CryptoJS.AES.encrypt(text, SECRET_KEY).toString();
