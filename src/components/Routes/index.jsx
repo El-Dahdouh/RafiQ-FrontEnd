@@ -25,17 +25,24 @@ const Routes = () => {
 
   return (
     <RouterRoutes>
-      {/* Default Route */}
-
-      {/* Pages with header or fooeter */}
-      <Route element={<MainLayout />}>
+      {/* Public pages before login */}
+      <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
 
-      {/* Pages without header or fooeter */}
+      {/* Auth pages */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+
+      {/* Protected pages after login - example */}
+      <Route element={<MainLayout />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" />} />
     </RouterRoutes>
   );
 };

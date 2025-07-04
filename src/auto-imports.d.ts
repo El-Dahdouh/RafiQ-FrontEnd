@@ -6,17 +6,21 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const About: typeof import('./pages/Landing/index.js')['About']
   const App: typeof import('./App.jsx')['default']
+  const Contact: typeof import('./pages/Landing/index.js')['Contact']
+  const Dashboard: typeof import('./pages/Dashboard/Dashboard.jsx')['default']
   const Footer: typeof import('./layouts/Footer.jsx')['default']
   const GlobalMiddleware: typeof import('./middleware/GlobalMiddleware.jsx')['default']
   const Header: typeof import('./layouts/Header.jsx')['default']
-  const Home: typeof import('./components/Home/index.jsx')['default']
+  const Home: typeof import('./pages/Landing/index.js')['Home']
   const Link: typeof import('react-router-dom')['Link']
   const LoginPage: typeof import('./features/Auth/index.js')['LoginPage']
   const MainLayout: typeof import('./layouts/MainLayout.jsx')['default']
   const NavLink: typeof import('react-router-dom')['NavLink']
   const Navigate: typeof import('react-router-dom')['Navigate']
   const Outlet: typeof import('react-router-dom')['Outlet']
+  const PublicLayout: typeof import('./layouts/PublicLayout.jsx')['default']
   const RegisterPage: typeof import('./features/Auth/index.js')['RegisterPage']
   const Route: typeof import('react-router-dom')['Route']
   const Routes: typeof import('./components/Routes/index.jsx')['default']
