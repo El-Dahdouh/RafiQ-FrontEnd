@@ -26,9 +26,16 @@ const Routes = () => {
   return (
     <RouterRoutes>
       {/* Default Route */}
-      <Route path="/" element={<Home />} />
 
-      <Route path="*" element={<Navigate to="/" />} />
+      {/* Pages with header or fooeter */}
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
+
+      {/* Pages without header or fooeter */}
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </RouterRoutes>
   );
 };

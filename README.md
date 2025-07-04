@@ -68,7 +68,8 @@ project-root/
 │   │   └── useAuth.js
 │   ├── layouts/            # Layout components (e.g., Header, Footer)
 │   │   ├── Header.jsx
-│   │   └── Footer.jsx
+│   │   ├── Footer.jsx
+│   │   └── MainLayout.jsx
 │   ├── pages/              # Page-level components (views)
 │   │   ├── Home/
 │   │   │   ├── Home.jsx
@@ -98,6 +99,7 @@ project-root/
   - React Router
   - Zustand (state management)
   - Axios (API integration)
+  - Lucide React (Icons Library)
 - **Styling:**
   - CSS Modules / TailwindCSS
 
