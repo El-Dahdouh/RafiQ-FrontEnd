@@ -67,9 +67,12 @@ project-root/
 │   ├── hooks/              # Reusable custom hooks
 │   │   └── useAuth.js
 │   ├── layouts/            # Layout components (e.g., Header, Footer)
-│   │   ├── Header.jsx
+│   │   ├── Header/
+│   │   │   ├── PublicHeader.jsx
+│   │   │   └── PrivateHeader.jsx
 │   │   ├── Footer.jsx
-│   │   └── MainLayout.jsx
+│   │   ├── PublicLayout.jsx
+│   │   └── PrivateLayout.jsx
 │   ├── pages/              # Page-level components (views)
 │   │   ├── Home/
 │   │   │   ├── Home.jsx

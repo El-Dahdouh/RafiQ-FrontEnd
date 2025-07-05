@@ -37,7 +37,7 @@ const Routes = () => {
       <Route path="/register" element={<RegisterPage />} />
 
       {/* Protected pages after login - example */}
-      <Route element={<MainLayout />}>
+      <Route element={<PrivateLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
       </Route>
 
