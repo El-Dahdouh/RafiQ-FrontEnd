@@ -1,16 +1,48 @@
-import React from "react";
+//import React from "react";
 
 const Contact = () => {
   return (
-    <div className="max-w-md space-y-4">
-      <h2 className="text-2xl font-bold">Contact Us</h2>
-      <p>If you have questions, suggestions, or need help — feel free to reach out:</p>
-      <ul className="list-disc list-inside text-gray-700">
-        <li>Email: support@rafiq.app</li>
-        <li>Twitter: <a href="https://twitter.com/rafiq" className="text-blue-600">@rafiq</a></li>
-        <li>GitHub: <a href="https://github.com/rafiq" className="text-blue-600">github.com/rafiq</a></li>
-      </ul>
-    </div>
+    <>
+      <div className="contact-us px-4 py-10 bg-white">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">Contact Us</h1>
+          <p className="text-gray-600">
+            We are here to help! Whether you have questions, suggestions, or
+            want to report a problem, feel free to reach out. Fill out the form
+            below or connect with us directly via email or social media.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Enter your message"
+              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 md:col-span-2"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 md:col-span-2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 
