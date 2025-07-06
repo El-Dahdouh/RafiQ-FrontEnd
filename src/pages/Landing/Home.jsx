@@ -5,7 +5,7 @@ const Home = () => {
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Hero Section */}
       <div
-        className="relative h-[600px] bg-cover bg-center"
+        className="relative h-[700px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${teamPhoto})`,
           backgroundAttachment: "fixed",

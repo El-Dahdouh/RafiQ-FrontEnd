@@ -6,7 +6,7 @@ export default function PublicLayout() {
   return (
     <>
       <PublicHeader />
-      <main className="container mx-auto px-6 py-8">
+      <main>
         <Outlet />
       </main>
       <Footer />
