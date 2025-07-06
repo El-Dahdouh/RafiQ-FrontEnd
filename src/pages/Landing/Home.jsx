@@ -4,14 +4,16 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Hero Section */}
-      <div
-        className="relative h-[700px] bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${teamPhoto})`,
-          backgroundAttachment: "fixed",
-        }}
-      >
-        {/* Overlay to darken the image */}
+      <div className="relative h-[700px] overflow-hidden">
+        {/* Background Image with lazy loading */}
+        <img
+          src={teamPhoto}
+          alt="Students collaborating"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Overlay content */}
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-5xl font-bold text-white mb-4">
             Where Student Ideas Come to Life
@@ -20,12 +22,12 @@ const Home = () => {
             Rafiq is a collaborative space for students to turn their ideas into
             real-world projects through teamwork and creativity.
           </p>
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
           >
             Start Exploring Projects
-          </a>
+          </Link>
         </div>
       </div>
 
