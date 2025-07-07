@@ -11,6 +11,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "axios": "^1.10.0",
     "i18next": "^25.0.2",
     "js-cookie": "^3.0.5",
