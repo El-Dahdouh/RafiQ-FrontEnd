@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --accent: #1d4ed8;
+    --text-1: #1a202c;
+    --text-2: #718096;
+    --white: #fff;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --transition: all 300ms ease-in-out;
+}
+
+.section.trip {
+    margin: 6rem 0;
+    padding: rem 0;
+    background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+    overflow: hidden;
+}
+
+.trip .title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.trip .title h1 {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin: 1.5rem 0;
+    line-height: 1.2;
+}
+
+.trip .title p {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-2);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.trip .row {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.trip .swiper-container.mySwiper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 2rem;
+    overflow: hidden;
+}
+
+.trip .swiper-slide {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition);
+    /* Smooth transition */
+}
+
+.trip .post-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    direction: rtl;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.trip .post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    max-width: 100%;
+}
+
+.trip .post-author-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    max-width: 100%;
+}
+
+.trip .post-header-text {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.trip .post-author-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-1);
+    margin: 0;
+}
+
+.trip .post-meta {
+    font-size: 12px;
+    color: #777;
+}
+
+.trip .post-rating,
+.trip .post-time {
+    margin-left: 8px;
+}
+
+.trip .post-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.trip .post-content {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.trip .post-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-1);
+    word-wrap: break-word;
+}
+
+.trip .post-description {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+    word-wrap: break-word;
+}
+
+.trip .post-footer {
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+    max-width: 100%;
+}
+
+.trip .post-status {
+    margin: 4px 0;
+}
+
+.trip .post-status .status-open {
+    color: green;
+    font-weight: 600;
+}
+
+.trip .post-status .status-closed {
+    color: red;
+    font-weight: 600;
+}
+
+.trip .post-tags {
+    margin-top: 8px;
+    max-width: 100%;
+}
+
+.trip .tag {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 2px;
+    font-size: 14px;
+    color: var(--text-1);
+    transition: background-color var(--transition);
+    word-wrap: break-word;
+}
+
+.trip .tag:hover {
+    background-color: #e0e0e0;
+}
+
+.trip .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    transition: opacity var(--transition);
+    padding: 1.5rem;
+}
+
+.trip .swiper-slide:hover .overlay {
+    opacity: 1;
+}
+
+.trip .overlay h3 {
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.trip .overlay p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.trip .overlay .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.custom-next,
+.custom-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.custom-next:hover,
+.custom-prev:hover {
+    background-color: var(--accent);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.custom-next {
+    right: 10px;
+}
+
+.custom-prev {
+    left: 10px;
+}
+
+.custom-pagination {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.trip .explore {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.btn {
+    display: inline-block;
+    color: var(--white);
+    font-family: "Inter", "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+    .trip .swiper-slide {
+        width: 750px !important;
+        /* عرض ثابت مع !important للتغلب على الأنماط المضمنة */
+        max-width: 750px;
+        margin: 0 auto;
+        /* تمركز الشريحة */
+    }
+
+    .trip .post-card {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .trip .swiper-container.mySwiper {
+        width: 750px !important;
+        /* ضمان عرض السلايدر */
+        margin: 0 auto;
+        /* تمركز السلايدر */
+        overflow: visible;
+        /* منع قص العنصر */
+        position: relative;
+        /* لضمان تموضع الأسهم نسبةً إلى السلايدر */
+    }
+
+    .trip .row {
+        display: block;
+        /* إعادة تعيين الـ row إلى block */
+        overflow: hidden;
+        /* منع قص المحتوى */
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .trip .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .trip .title p {
+        max-width: 90%;
+        font-size: 1.1rem;
+    }
+
+    .trip .swiper-slide {
+        width: 90%;
+    }
+
+    .trip .post-title {
+        font-size: 20px;
+    }
+
+    .trip .post-description {
+        font-size: 14px;
+    }
+
+    .trip .overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .trip .overlay p {
+        font-size: 1rem;
+    }
+
+    .custom-next,
+    .custom-prev {
+        top: -10%;
+        transform: translateY(0);
+    }
+
+    .custom-next {
+        right: 10px;
+    }
+
+    .custom-prev {
+        right: 60px;
+        left: auto;
+    }
+
+}
+
+@media (max-width: 567px) {
+    .trip .title h1 {
+        font-size: 2rem;
+    }
+
+    .section.trip {
+        padding: 4rem 0;
+        margin: 3rem 0;
+    }
+
+    .trip .swiper-container {
+        max-width: 95%;
+    }
+
+    .trip .swiper-slide {
+        width: 100%;
+    }
+
+    .trip .post-title {
+        font-size: 18px;
+    }
+
+    .trip .post-description {
+        font-size: 13px;
+    }
+
+    .trip .overlay h3 {
+        font-size: 1.2rem;
+    }
+
+    .trip .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .custom-next,
+    .custom-prev {
+        top: -12%;
+    }
+}

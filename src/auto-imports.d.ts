@@ -20,6 +20,7 @@ declare global {
   const Outlet: typeof import('react-router-dom')['Outlet']
   const PrivateHeader: typeof import('./layouts/Header/PrivateHeader.jsx')['default']
   const PrivateLayout: typeof import('./layouts/PrivateLayout.jsx')['default']
+  const ProjectsSection: typeof import('./pages/Landing/projectsSection/ProjectsSection.jsx')['default']
   const PublicHeader: typeof import('./layouts/Header/PublicHeader.jsx')['default']
   const PublicLayout: typeof import('./layouts/PublicLayout.jsx')['default']
   const RegisterPage: typeof import('./features/Auth/index.js')['RegisterPage']
