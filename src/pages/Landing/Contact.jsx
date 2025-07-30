@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+
 const Contact = () => {
   const form = useRef();
+
   const sendMessage = (e) => {
     e.preventDefault();
 
@@ -12,10 +14,7 @@ const Contact = () => {
       .then(
         () => {
           console.log("SUCCESS!");
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("title").value = "";
-          document.getElementById("message").value = "";
+          form.current.reset(); // Reset form fields
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -24,61 +23,64 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <div className="contact-us px-4 py-10 bg-white">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">Contact Us</h1>
-          <p className="text-gray-600">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-12">
+      <div className="bg-white shadow-2xl rounded-2xl max-w-4xl w-full p-8 md:p-14">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h1>
+          <p className="text-gray-600 max-w-xl mx-auto">
             We are here to help! Whether you have questions, suggestions, or
             want to report a problem, feel free to reach out. Fill out the form
             below or connect with us directly via email or social media.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <form
-            ref={form}
-            onSubmit={sendMessage}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
+        <form ref={form} onSubmit={sendMessage} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Enter your name"
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Name"
+              className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Enter your email"
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Your Email"
+              className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
-            <input
-              type="text"
-              id="title"
-              name="title"
-              placeholder="Enter a title for the message"
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Enter your message"
-              className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 md:col-span-3"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 md:col-span-3"
-            >
-              send
-            </button>
-          </form>
-        </div>
+          </div>
+
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Subject"
+            className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          ></textarea>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 
