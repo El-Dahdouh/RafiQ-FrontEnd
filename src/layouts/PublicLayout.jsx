@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import PublicHeader from "./Header/PublicHeader";
-import Footer from "./Footer";
 
 export default function PublicLayout() {
   return (
@@ -9,7 +8,6 @@ export default function PublicLayout() {
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 }

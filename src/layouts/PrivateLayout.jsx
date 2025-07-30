@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import PrivateHeader from "./Header/PrivateHeader";
-import Footer from "./Footer";
 
 export default function PrivateLayout() {
   return (
@@ -9,7 +8,6 @@ export default function PrivateLayout() {
       <main className="container mx-auto px-6 py-8 flex-grow">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 }
