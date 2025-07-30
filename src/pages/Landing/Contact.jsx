@@ -35,7 +35,7 @@ const Contact = () => {
         </div>
 
         <form ref={form} onSubmit={sendMessage} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <input
               type="text"
               id="name"
@@ -52,16 +52,16 @@ const Contact = () => {
               className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-          </div>
 
-          <input
-            type="text"
-            id="title"
-            name="title"
-            placeholder="Subject"
-            className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Subject"
+              className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
 
           <textarea
             id="message"
